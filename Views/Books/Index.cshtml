@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ConsumeGoogleAPI.Models.Book>
+@{
+    ViewData["Title"] = "Harry Potter Books Information";
+}
+
+<div>
+    <h3 class="display-4">@ViewData["Title"]</h3>
+    <br />
+    <br />
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a asp-controller="Books"
+                   asp-action="Details"
+                   asp-route-id="@item.Id">
+                    @item.Title
+            </a>
+        </li>
+    }
+    </ul>
+</div>
+
+
+
+
+
+
+
